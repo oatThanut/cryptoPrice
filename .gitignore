@@ -1,0 +1,15 @@
+# CryptoPrice project since 17 Apr 2018
+
+# CocoaPods
+Pods/
+
+# Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS file & other unnecessary file
+.DS_Store
+.xcuserstate
+xcuserdata/
