@@ -12,4 +12,5 @@ Pods/
 # macOS file & other unnecessary file
 .DS_Store
 .xcuserstate
+xcodeproj/
 xcuserdata/
