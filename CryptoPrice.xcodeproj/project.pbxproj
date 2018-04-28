@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		124D6051208591B1002D7608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D6050208591B1002D7608 /* AppDelegate.swift */; };
-		124D6053208591B1002D7608 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D6052208591B1002D7608 /* ViewController.swift */; };
+		124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D6052208591B1002D7608 /* CPSplashScreenVC.swift */; };
 		124D6056208591B1002D7608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6054208591B1002D7608 /* Main.storyboard */; };
 		124D6058208591B2002D7608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124D6057208591B2002D7608 /* Assets.xcassets */; };
 		124D605B208591B2002D7608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6059208591B2002D7608 /* LaunchScreen.storyboard */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		124D604D208591B1002D7608 /* CryptoPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		124D6050208591B1002D7608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		124D6052208591B1002D7608 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		124D6052208591B1002D7608 /* CPSplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSplashScreenVC.swift; sourceTree = "<group>"; };
 		124D6055208591B1002D7608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		124D6057208591B2002D7608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		124D605A208591B2002D7608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,14 +61,38 @@
 		124D604F208591B1002D7608 /* CryptoPrice */ = {
 			isa = PBXGroup;
 			children = (
+				125119832094D97D00282E83 /* Controller */,
+				125119812094AA7800282E83 /* Model */,
+				125119822094D94000282E83 /* View */,
 				124D6050208591B1002D7608 /* AppDelegate.swift */,
-				124D6052208591B1002D7608 /* ViewController.swift */,
 				124D6054208591B1002D7608 /* Main.storyboard */,
 				124D6057208591B2002D7608 /* Assets.xcassets */,
 				124D6059208591B2002D7608 /* LaunchScreen.storyboard */,
 				124D605C208591B2002D7608 /* Info.plist */,
 			);
 			path = CryptoPrice;
+			sourceTree = "<group>";
+		};
+		125119812094AA7800282E83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		125119822094D94000282E83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				124D6052208591B1002D7608 /* CPSplashScreenVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		125119832094D97D00282E83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		3D502B60B7123D76A3A4AA7F /* Frameworks */ = {
@@ -206,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				124D6053208591B1002D7608 /* ViewController.swift in Sources */,
+				124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */,
 				124D6051208591B1002D7608 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +379,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NL8W8JS6;
 				INFOPLIST_FILE = CryptoPrice/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = IndividualProject.CryptoPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -371,7 +398,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NL8W8JS6;
 				INFOPLIST_FILE = CryptoPrice/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = IndividualProject.CryptoPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
