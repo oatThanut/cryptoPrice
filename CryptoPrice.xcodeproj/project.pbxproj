@@ -12,6 +12,7 @@
 		124D6056208591B1002D7608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6054208591B1002D7608 /* Main.storyboard */; };
 		124D6058208591B2002D7608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124D6057208591B2002D7608 /* Assets.xcassets */; };
 		124D605B208591B2002D7608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6059208591B2002D7608 /* LaunchScreen.storyboard */; };
+		84520F16A9C41ED42019E033 /* Pods_CryptoPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		124D6057208591B2002D7608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		124D605A208591B2002D7608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		124D605C208591B2002D7608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.release.xcconfig"; sourceTree = "<group>"; };
+		6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.debug.xcconfig"; sourceTree = "<group>"; };
+		CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84520F16A9C41ED42019E033 /* Pods_CryptoPrice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				124D604F208591B1002D7608 /* CryptoPrice */,
 				124D604E208591B1002D7608 /* Products */,
+				562F68EDEC9748F3F156CAA8 /* Pods */,
+				3D502B60B7123D76A3A4AA7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = CryptoPrice;
 			sourceTree = "<group>";
 		};
+		3D502B60B7123D76A3A4AA7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		562F68EDEC9748F3F156CAA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */,
+				45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 124D605F208591B2002D7608 /* Build configuration list for PBXNativeTarget "CryptoPrice" */;
 			buildPhases = (
+				E4180AA3F60053ECC326DF49 /* [CP] Check Pods Manifest.lock */,
 				124D6049208591B1002D7608 /* Sources */,
 				124D604A208591B1002D7608 /* Frameworks */,
 				124D604B208591B1002D7608 /* Resources */,
+				344D823292096E2761A5ADF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		344D823292096E2761A5ADF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4180AA3F60053ECC326DF49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoPrice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		124D6049208591B1002D7608 /* Sources */ = {
@@ -278,15 +349,13 @@
 		};
 		124D6060208591B2002D7608 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NL8W8JS6;
 				INFOPLIST_FILE = CryptoPrice/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IndividualProject.CryptoPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +365,13 @@
 		};
 		124D6061208591B2002D7608 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NL8W8JS6;
 				INFOPLIST_FILE = CryptoPrice/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IndividualProject.CryptoPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
