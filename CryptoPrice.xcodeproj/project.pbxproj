@@ -12,6 +12,9 @@
 		124D6056208591B1002D7608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6054208591B1002D7608 /* Main.storyboard */; };
 		124D6058208591B2002D7608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124D6057208591B2002D7608 /* Assets.xcassets */; };
 		124D605B208591B2002D7608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6059208591B2002D7608 /* LaunchScreen.storyboard */; };
+		125119852095D1F100282E83 /* CPLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119842095D1F100282E83 /* CPLoginVC.swift */; };
+		125119872095D20800282E83 /* CPSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119862095D20800282E83 /* CPSignUpVC.swift */; };
+		125119892095D25300282E83 /* CPHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119882095D25300282E83 /* CPHomeVC.swift */; };
 		84520F16A9C41ED42019E033 /* Pods_CryptoPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 		124D6057208591B2002D7608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		124D605A208591B2002D7608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		124D605C208591B2002D7608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		125119842095D1F100282E83 /* CPLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLoginVC.swift; sourceTree = "<group>"; };
+		125119862095D20800282E83 /* CPSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSignUpVC.swift; sourceTree = "<group>"; };
+		125119882095D25300282E83 /* CPHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHomeVC.swift; sourceTree = "<group>"; };
 		45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.release.xcconfig"; sourceTree = "<group>"; };
 		6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.debug.xcconfig"; sourceTree = "<group>"; };
 		CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				124D6052208591B1002D7608 /* CPSplashScreenVC.swift */,
+				125119842095D1F100282E83 /* CPLoginVC.swift */,
+				125119862095D20800282E83 /* CPSignUpVC.swift */,
+				125119882095D25300282E83 /* CPHomeVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,8 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125119892095D25300282E83 /* CPHomeVC.swift in Sources */,
 				124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */,
+				125119872095D20800282E83 /* CPSignUpVC.swift in Sources */,
 				124D6051208591B1002D7608 /* AppDelegate.swift in Sources */,
+				125119852095D1F100282E83 /* CPLoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
