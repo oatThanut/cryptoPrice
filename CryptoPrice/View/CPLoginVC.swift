@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CPLoginVC: UIViewController {
-
+    
+    
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +26,26 @@ class CPLoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBAction func LoginBtn(_ sender: Any) {
+        let email = EmailTextField.text!
+        let password = PasswordTextField.text!
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            print(">>>> Loged In")
+            self.navigateToHome()
+        }
+    }
+    
+    func navigateToHome() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = storyBoard.instantiateViewController(withIdentifier: "Home") as! CPHomeVC
+        self.navigationController?.pushViewController(HomeVC, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
