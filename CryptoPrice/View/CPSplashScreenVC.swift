@@ -7,19 +7,40 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CPSplashScreenVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
+        if Auth.auth().currentUser != nil {
+            // User is signed in.
+            navigateToHome()
+        } else {
+            // No user is signed in.
+            navigateToLogin()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func navigateToLogin() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyBoard.instantiateViewController(withIdentifier: "Login") as! CPLoginVC
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    func navigateToHome() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = storyBoard.instantiateViewController(withIdentifier: "Home") as! CPHomeVC
+        self.navigationController?.pushViewController(HomeVC, animated: true)
+    }
 
 }
 
