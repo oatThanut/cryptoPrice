@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class CPLoginVC: UIViewController {
     
@@ -31,12 +32,27 @@ class CPLoginVC: UIViewController {
     }
     
     @IBAction func LoginBtn(_ sender: Any) {
-        let email = EmailTextField.text!
-        let password = PasswordTextField.text!
+        let email: String = EmailTextField.text!
+        let password: String = PasswordTextField.text!
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            print(">>>> Loged In")
-            self.navigateToHome()
+        if(email != "" || password != "" ){
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+
+                guard let user = user else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                print(">>>> Loged In")
+                self.navigateToHome()
+            }
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "Please enter email and password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
