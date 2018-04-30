@@ -16,6 +16,7 @@
 		125119872095D20800282E83 /* CPSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119862095D20800282E83 /* CPSignUpVC.swift */; };
 		125119892095D25300282E83 /* CPTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119882095D25300282E83 /* CPTabBarVC.swift */; };
 		127B9B382097647A0042E72A /* CPHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B372097647A0042E72A /* CPHomeVC.swift */; };
+		127B9B3A2097818F0042E72A /* CPListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B392097818F0042E72A /* CPListVC.swift */; };
 		12EB4B6D2095FCFD007235F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */; };
 		84520F16A9C41ED42019E033 /* Pods_CryptoPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		125119862095D20800282E83 /* CPSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSignUpVC.swift; sourceTree = "<group>"; };
 		125119882095D25300282E83 /* CPTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTabBarVC.swift; sourceTree = "<group>"; };
 		127B9B372097647A0042E72A /* CPHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHomeVC.swift; sourceTree = "<group>"; };
+		127B9B392097818F0042E72A /* CPListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPListVC.swift; sourceTree = "<group>"; };
 		12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.release.xcconfig"; sourceTree = "<group>"; };
 		6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				125119862095D20800282E83 /* CPSignUpVC.swift */,
 				125119882095D25300282E83 /* CPTabBarVC.swift */,
 				127B9B372097647A0042E72A /* CPHomeVC.swift */,
+				127B9B392097818F0042E72A /* CPListVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				125119872095D20800282E83 /* CPSignUpVC.swift in Sources */,
 				124D6051208591B1002D7608 /* AppDelegate.swift in Sources */,
 				127B9B382097647A0042E72A /* CPHomeVC.swift in Sources */,
+				127B9B3A2097818F0042E72A /* CPListVC.swift in Sources */,
 				125119852095D1F100282E83 /* CPLoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
