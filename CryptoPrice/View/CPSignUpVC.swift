@@ -38,18 +38,26 @@ class CPSignUpVC: UIViewController {
         let confirmPassword = ConfirmPasswordTextField.text!
         
         if(name != "" || email != "" || password != "" || confirmPassword != "") {
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                guard let user = user else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    return
+            if(password == confirmPassword) {
+                Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                    guard let user = user else {
+                        let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        return
+                    }
+                    Auth.auth().currentUser?.createProfileChangeRequest().displayName = name
+                    print(">>> success")
+                    self.navigateToHome()
                 }
-                Auth.auth().currentUser?.createProfileChangeRequest().displayName = name
-                print(">>> success")
-                self.navigateToHome()
+            } else {
+                let alertController = UIAlertController(title: "Password doesn't match", message: "Please enter the password again!", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
+            
         } else {
             let alertController = UIAlertController(title: "Error", message: "Please fill all information", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

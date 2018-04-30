@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CPHomeVC: UITableViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,11 @@ class CPHomeVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    @IBAction func LogoutBtn(_ sender: Any) {
+        try! Auth.auth().signOut()
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
