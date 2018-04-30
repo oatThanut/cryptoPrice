@@ -38,7 +38,7 @@ class CPSplashScreenVC: UIViewController {
     
     func navigateToHome() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let HomeVC = storyBoard.instantiateViewController(withIdentifier: "Home") as! CPHomeVC
+        let HomeVC = storyBoard.instantiateViewController(withIdentifier: "Home") as! CPTabBarVC
         self.navigationController?.pushViewController(HomeVC, animated: true)
     }
 
