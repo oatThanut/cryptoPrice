@@ -18,13 +18,6 @@ class CPSignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -39,18 +32,20 @@ class CPSignUpVC: UIViewController {
         
         if(name != "" || email != "" || password != "" || confirmPassword != "") {
             if(password == confirmPassword) {
-                Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                    guard let user = user else {
-                        let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                        alertController.addAction(defaultAction)
-                        self.present(alertController, animated: true, completion: nil)
-                        return
-                    }
-                    Auth.auth().currentUser?.createProfileChangeRequest().displayName = name
-                    print(">>> success")
-                    self.navigateToHome()
-                }
+                FirebaseService.instance.registerUser(withEmail: email, andPassword: password,
+                    userCreationComplete: { (success, registerError) in
+                        if success {
+                            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                            let HomeVC = storyBoard.instantiateViewController(withIdentifier: "Home") as! CPTabBarVC
+                            self.navigationController?.pushViewController(HomeVC, animated: true)
+                        } else {
+                            let alertController = UIAlertController(title: "Error", message: registerError?.localizedDescription, preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(defaultAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                })
+       
             } else {
                 let alertController = UIAlertController(title: "Password doesn't match", message: "Please enter the password again!", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -64,12 +59,6 @@ class CPSignUpVC: UIViewController {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
-    }
-    
-    func navigateToHome() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let HomeVC = storyBoard.instantiateViewController(withIdentifier: "Home") as! CPHomeVC
-        self.navigationController?.pushViewController(HomeVC, animated: true)
     }
 
 }
