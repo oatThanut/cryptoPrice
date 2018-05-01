@@ -32,7 +32,7 @@ class CPSignUpVC: UIViewController {
         
         if(name != "" || email != "" || password != "" || confirmPassword != "") {
             if(password == confirmPassword) {
-                FirebaseService.instance.registerUser(withEmail: email, andPassword: password,
+                FirebaseService.instance.registerUser(withName: name, Email: email, andPassword: password,
                     userCreationComplete: { (success, registerError) in
                         if success {
                             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
