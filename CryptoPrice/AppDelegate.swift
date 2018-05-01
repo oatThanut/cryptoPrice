@@ -19,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "Splash") as! CPSplashScreenVC
+        
+        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        
+        self.window?.rootViewController = nvc
+        self.window?.makeKeyAndVisible()
         return true
     }
 

@@ -14,7 +14,11 @@
 		124D605B208591B2002D7608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6059208591B2002D7608 /* LaunchScreen.storyboard */; };
 		125119852095D1F100282E83 /* CPLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119842095D1F100282E83 /* CPLoginVC.swift */; };
 		125119872095D20800282E83 /* CPSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119862095D20800282E83 /* CPSignUpVC.swift */; };
-		125119892095D25300282E83 /* CPHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119882095D25300282E83 /* CPHomeVC.swift */; };
+		125119892095D25300282E83 /* CPTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125119882095D25300282E83 /* CPTabBarVC.swift */; };
+		127B9B382097647A0042E72A /* CPHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B372097647A0042E72A /* CPHomeVC.swift */; };
+		127B9B3A2097818F0042E72A /* CPListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B392097818F0042E72A /* CPListVC.swift */; };
+		127B9B3C20978F020042E72A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B3B20978F020042E72A /* FirebaseService.swift */; };
+		12EB4B6D2095FCFD007235F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */; };
 		84520F16A9C41ED42019E033 /* Pods_CryptoPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +32,11 @@
 		124D605C208591B2002D7608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		125119842095D1F100282E83 /* CPLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLoginVC.swift; sourceTree = "<group>"; };
 		125119862095D20800282E83 /* CPSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSignUpVC.swift; sourceTree = "<group>"; };
-		125119882095D25300282E83 /* CPHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHomeVC.swift; sourceTree = "<group>"; };
+		125119882095D25300282E83 /* CPTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTabBarVC.swift; sourceTree = "<group>"; };
+		127B9B372097647A0042E72A /* CPHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHomeVC.swift; sourceTree = "<group>"; };
+		127B9B392097818F0042E72A /* CPListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPListVC.swift; sourceTree = "<group>"; };
+		127B9B3B20978F020042E72A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.release.xcconfig"; sourceTree = "<group>"; };
 		6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.debug.xcconfig"; sourceTree = "<group>"; };
 		CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,14 +75,15 @@
 		124D604F208591B1002D7608 /* CryptoPrice */ = {
 			isa = PBXGroup;
 			children = (
+				127B9B3D2098166E0042E72A /* HttpService */,
 				125119832094D97D00282E83 /* Controller */,
 				125119812094AA7800282E83 /* Model */,
-				125119822094D94000282E83 /* View */,
 				124D6050208591B1002D7608 /* AppDelegate.swift */,
 				124D6054208591B1002D7608 /* Main.storyboard */,
 				124D6057208591B2002D7608 /* Assets.xcassets */,
 				124D6059208591B2002D7608 /* LaunchScreen.storyboard */,
 				124D605C208591B2002D7608 /* Info.plist */,
+				12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */,
 			);
 			path = CryptoPrice;
 			sourceTree = "<group>";
@@ -86,22 +95,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		125119822094D94000282E83 /* View */ = {
+		125119832094D97D00282E83 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				124D6052208591B1002D7608 /* CPSplashScreenVC.swift */,
 				125119842095D1F100282E83 /* CPLoginVC.swift */,
 				125119862095D20800282E83 /* CPSignUpVC.swift */,
-				125119882095D25300282E83 /* CPHomeVC.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		125119832094D97D00282E83 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
+				125119882095D25300282E83 /* CPTabBarVC.swift */,
+				127B9B372097647A0042E72A /* CPHomeVC.swift */,
+				127B9B392097818F0042E72A /* CPListVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		127B9B3D2098166E0042E72A /* HttpService */ = {
+			isa = PBXGroup;
+			children = (
+				127B9B3B20978F020042E72A /* FirebaseService.swift */,
+			);
+			path = HttpService;
 			sourceTree = "<group>";
 		};
 		3D502B60B7123D76A3A4AA7F /* Frameworks */ = {
@@ -182,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				124D605B208591B2002D7608 /* LaunchScreen.storyboard in Resources */,
+				12EB4B6D2095FCFD007235F5 /* GoogleService-Info.plist in Resources */,
 				124D6058208591B2002D7608 /* Assets.xcassets in Resources */,
 				124D6056208591B1002D7608 /* Main.storyboard in Resources */,
 			);
@@ -239,10 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125119892095D25300282E83 /* CPHomeVC.swift in Sources */,
+				125119892095D25300282E83 /* CPTabBarVC.swift in Sources */,
 				124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */,
+				127B9B3C20978F020042E72A /* FirebaseService.swift in Sources */,
 				125119872095D20800282E83 /* CPSignUpVC.swift in Sources */,
 				124D6051208591B1002D7608 /* AppDelegate.swift in Sources */,
+				127B9B382097647A0042E72A /* CPHomeVC.swift in Sources */,
+				127B9B3A2097818F0042E72A /* CPListVC.swift in Sources */,
 				125119852095D1F100282E83 /* CPLoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
