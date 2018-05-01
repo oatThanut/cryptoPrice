@@ -11,7 +11,6 @@ import FirebaseAuth
 
 class CPHomeVC: UITableViewController {
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +41,6 @@ class CPHomeVC: UITableViewController {
     @IBAction func LogoutBtn(_ sender: Any) {
         try! Auth.auth().signOut()
     }
-    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

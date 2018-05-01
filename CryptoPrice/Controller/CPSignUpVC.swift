@@ -30,7 +30,7 @@ class CPSignUpVC: UIViewController {
         let password = PasswordTextField.text!
         let confirmPassword = ConfirmPasswordTextField.text!
         
-        if(name != "" || email != "" || password != "" || confirmPassword != "") {
+        if(name != "" && email != "" && password != "" && confirmPassword != "") {
             if(password == confirmPassword) {
                 FirebaseService.instance.registerUser(withName: name, Email: email, andPassword: password,
                     userCreationComplete: { (success, registerError) in

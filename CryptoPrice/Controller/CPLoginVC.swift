@@ -18,6 +18,10 @@ class CPLoginVC: UIViewController {
         super.viewDidLoad()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func LoginBtn(_ sender: Any) {
         let email: String = EmailTextField.text!
         let password: String = PasswordTextField.text!
@@ -43,10 +47,6 @@ class CPLoginVC: UIViewController {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
 }

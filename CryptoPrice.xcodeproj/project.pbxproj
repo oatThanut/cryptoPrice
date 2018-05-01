@@ -75,9 +75,9 @@
 		124D604F208591B1002D7608 /* CryptoPrice */ = {
 			isa = PBXGroup;
 			children = (
+				127B9B3D2098166E0042E72A /* HttpService */,
 				125119832094D97D00282E83 /* Controller */,
 				125119812094AA7800282E83 /* Model */,
-				125119822094D94000282E83 /* View */,
 				124D6050208591B1002D7608 /* AppDelegate.swift */,
 				124D6054208591B1002D7608 /* Main.storyboard */,
 				124D6057208591B2002D7608 /* Assets.xcassets */,
@@ -95,7 +95,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		125119822094D94000282E83 /* View */ = {
+		125119832094D97D00282E83 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				124D6052208591B1002D7608 /* CPSplashScreenVC.swift */,
@@ -105,15 +105,15 @@
 				127B9B372097647A0042E72A /* CPHomeVC.swift */,
 				127B9B392097818F0042E72A /* CPListVC.swift */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		125119832094D97D00282E83 /* Controller */ = {
+		127B9B3D2098166E0042E72A /* HttpService */ = {
 			isa = PBXGroup;
 			children = (
 				127B9B3B20978F020042E72A /* FirebaseService.swift */,
 			);
-			path = Controller;
+			path = HttpService;
 			sourceTree = "<group>";
 		};
 		3D502B60B7123D76A3A4AA7F /* Frameworks */ = {
