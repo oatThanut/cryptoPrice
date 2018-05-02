@@ -40,6 +40,9 @@ class CPHomeVC: UITableViewController {
     
     @IBAction func LogoutBtn(_ sender: Any) {
         try! Auth.auth().signOut()
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyBoard.instantiateViewController(withIdentifier: "Login") as! CPLoginVC
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 
     /*

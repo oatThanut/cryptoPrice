@@ -188,6 +188,7 @@
                             <constraint firstItem="53l-69-QDG" firstAttribute="leading" secondItem="Ibu-ow-1Pl" secondAttribute="leading" id="vZB-Jk-amF"/>
                             <constraint firstAttribute="trailing" secondItem="53l-69-QDG" secondAttribute="trailing" id="xDF-dr-3nZ"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jyp-1W-qCr"/>
                     </view>
                     <connections>
                         <outlet property="EmailTextField" destination="Qtc-22-wry" id="SjT-qy-ISw"/>
@@ -392,6 +393,7 @@
                             <constraint firstAttribute="trailing" secondItem="l8p-7l-zLy" secondAttribute="trailing" id="tof-KK-F9f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vVi-6m-m5f" secondAttribute="trailing" constant="24" id="uCC-Lg-eBA"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="MeB-Ng-oGY"/>
                     </view>
                     <connections>
                         <outlet property="ConfirmPasswordTextField" destination="ZZL-7c-qSJ" id="QzC-eR-tTd"/>
@@ -531,6 +533,6 @@
         <image name="No" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q22-hd-9X3"/>
+        <segue reference="5hW-cW-ejt"/>
     </inferredMetricsTieBreakers>
 </document>
