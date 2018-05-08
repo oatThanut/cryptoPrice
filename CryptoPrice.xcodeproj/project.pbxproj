@@ -18,6 +18,8 @@
 		127B9B382097647A0042E72A /* CPHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B372097647A0042E72A /* CPHomeVC.swift */; };
 		127B9B3A2097818F0042E72A /* CPListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B392097818F0042E72A /* CPListVC.swift */; };
 		127B9B3C20978F020042E72A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B9B3B20978F020042E72A /* FirebaseService.swift */; };
+		12B4C028209E200800E12A27 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4C027209E200800E12A27 /* AlamofireService.swift */; };
+		12B4C02A209E209D00E12A27 /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4C029209E209D00E12A27 /* CPConstants.swift */; };
 		12EB4B6D2095FCFD007235F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */; };
 		84520F16A9C41ED42019E033 /* Pods_CryptoPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3DE8BAFB79EF4F793BAC1D /* Pods_CryptoPrice.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		127B9B372097647A0042E72A /* CPHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHomeVC.swift; sourceTree = "<group>"; };
 		127B9B392097818F0042E72A /* CPListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPListVC.swift; sourceTree = "<group>"; };
 		127B9B3B20978F020042E72A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		12B4C027209E200800E12A27 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		12B4C029209E209D00E12A27 /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
 		12EB4B6C2095FCFD007235F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45F21D56D40ADED20C23DE10 /* Pods-CryptoPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.release.xcconfig"; sourceTree = "<group>"; };
 		6C9C22548E6C3FF4DBB0586D /* Pods-CryptoPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoPrice/Pods-CryptoPrice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				127B9B3B20978F020042E72A /* FirebaseService.swift */,
+				12B4C027209E200800E12A27 /* AlamofireService.swift */,
+				12B4C029209E209D00E12A27 /* CPConstants.swift */,
 			);
 			path = HttpService;
 			sourceTree = "<group>";
@@ -266,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B4C02A209E209D00E12A27 /* CPConstants.swift in Sources */,
 				125119892095D25300282E83 /* CPTabBarVC.swift in Sources */,
+				12B4C028209E200800E12A27 /* AlamofireService.swift in Sources */,
 				124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */,
 				127B9B3C20978F020042E72A /* FirebaseService.swift in Sources */,
 				125119872095D20800282E83 /* CPSignUpVC.swift in Sources */,
@@ -421,7 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NL8W8JS6;
 				INFOPLIST_FILE = CryptoPrice/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = IndividualProject.CryptoPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -437,7 +448,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NL8W8JS6;
 				INFOPLIST_FILE = CryptoPrice/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = IndividualProject.CryptoPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
