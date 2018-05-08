@@ -23,16 +23,6 @@ class CPSplashScreenVC: UIViewController {
             // No user is signed in.
             navigateToLogin()
         }
-        
-        //Test alamofire function
-        print(">>>>>>>\n>>>>>>>")
-            APIClient.instance.retrieveCrypto(
-                success: { (response) in
-                    
-            },  error: {
-                
-            })
-        //---
     }
 
     override func didReceiveMemoryWarning() {

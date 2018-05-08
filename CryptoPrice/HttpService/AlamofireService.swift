@@ -17,15 +17,6 @@ class APIClient {
             if response.result.isSuccess {
                 let dict = response.result.value as! NSDictionary
                 
-//                if let crypto = dict.object(forKey: "1") {
-//                    print("-----------------------<<<<")
-//                    print(crypto)
-//                    print("-----------------------<<<<")
-//                    if let paringID = (crypto as AnyObject).object(forKey: "primary_currency") {
-//                        print(paringID)
-//                    }
-//
-//                }
                 for index in dict {
                     let key:Int = (index.key as AnyObject).intValue
                     CPConstants.CryptoList[key] = (dict.object(forKey: key.description) as! NSDictionary)
