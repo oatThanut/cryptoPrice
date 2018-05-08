@@ -12,9 +12,31 @@ import Alamofire
 class APIClient {
     static let instance = APIClient()
     
-    func retrieveCrypto(success: @escaping (Dictionary<String, Any>) -> (), error: @escaping() -> ()) {
+    func retrieveCrypto(success: @escaping (NSDictionary) -> (), error: @escaping() -> ()) {
         Alamofire.request("\(CPConstants.BASE_URL)").responseJSON { response in
-            print(response.result.value)
+            if response.result.isSuccess {
+                let dict = response.result.value as! NSDictionary
+                
+//                if let crypto = dict.object(forKey: "1") {
+//                    print("-----------------------<<<<")
+//                    print(crypto)
+//                    print("-----------------------<<<<")
+//                    if let paringID = (crypto as AnyObject).object(forKey: "primary_currency") {
+//                        print(paringID)
+//                    }
+//
+//                }
+                for index in dict {
+                    let key:Int = (index.key as AnyObject).intValue
+                    CPConstants.CryptoList[key] = (dict.object(forKey: key.description) as! NSDictionary)
+                }
+                
+                success(response.result.value as! NSDictionary)
+            } else {
+                
+            }
         }
     }
+    
+    
 }
