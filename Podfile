@@ -8,6 +8,7 @@ target 'CryptoPrice' do
   # Pods for CryptoPrice
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   pod 'Alamofire', '~> 4.7'
 
 end
