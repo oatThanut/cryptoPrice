@@ -12,6 +12,7 @@ import FirebaseAuth
 class FirebaseService {
     static let instance = FirebaseService()
     var docRef: DocumentReference!
+    let userUid = Auth.auth().currentUser!.uid
     
     func registerUser(withName name:String, Email email:String, andPassword password:String, userCreationComplete: @escaping (_ status:Bool, _ error:Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -47,5 +48,20 @@ class FirebaseService {
             }
             loginComplete(true, nil)
         }
+    }
+    
+    func retrieveFavorite(){
+        let fevRef = Firestore.firestore().document("users/\(userUid)")
+        fevRef.getDocument { (document, error) in
+            let favData = document?.data() as! NSDictionary
+            let fav = favData.object(forKey: "favorite") as! Array<Int>
+            print(fav)
+            CPConstants.Favorite = fav
+        }
+        print(fevRef)
+    }
+    
+    func updateFavorite() {
+        
     }
 }

@@ -558,16 +558,74 @@
                     <view key="view" contentMode="scaleToFill" id="NJE-lz-kbT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S4o-d2-faw">
+                                <rect key="frame" x="30" y="100" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Xdh-4g-OZx"/>
+                                    <constraint firstAttribute="height" constant="80" id="koD-Sq-ixL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvF-Kn-7xE">
+                                <rect key="frame" x="151" y="110" width="208" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bK-Qs-0Ym">
+                                <rect key="frame" x="151" y="147" width="94" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXN-N6-lyq">
+                                <rect key="frame" x="0.0" y="201" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kze-Dt-lM2">
+                                        <rect key="frame" x="32" y="15" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Rn-Pw-Hvs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S4o-d2-faw" firstAttribute="top" secondItem="e1S-4B-ydS" secondAttribute="top" constant="36" id="D9r-nP-Qco"/>
+                            <constraint firstItem="e1S-4B-ydS" firstAttribute="trailing" secondItem="wXN-N6-lyq" secondAttribute="trailing" id="TKK-GP-UPt"/>
+                            <constraint firstItem="wXN-N6-lyq" firstAttribute="centerX" secondItem="NJE-lz-kbT" secondAttribute="centerX" id="boZ-Pp-ULb"/>
+                            <constraint firstItem="wXN-N6-lyq" firstAttribute="trailing" secondItem="e1S-4B-ydS" secondAttribute="trailing" id="gcZ-DA-1sM"/>
+                            <constraint firstItem="wXN-N6-lyq" firstAttribute="leading" secondItem="e1S-4B-ydS" secondAttribute="leading" id="jJ3-Tp-J72"/>
+                            <constraint firstItem="wXN-N6-lyq" firstAttribute="leading" secondItem="e1S-4B-ydS" secondAttribute="leading" id="lSg-Kp-ZNx"/>
+                            <constraint firstItem="wXN-N6-lyq" firstAttribute="top" secondItem="S4o-d2-faw" secondAttribute="bottom" constant="21" id="wgR-gS-mYy"/>
+                            <constraint firstItem="S4o-d2-faw" firstAttribute="leading" secondItem="e1S-4B-ydS" secondAttribute="leading" constant="30" id="zFh-qT-W7v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e1S-4B-ydS"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rte-Ul-fOS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="CwL-me-rgb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Heart" id="CwL-me-rgb">
+                            <connections>
+                                <action selector="FavBtn:" destination="z6G-it-Ojz" id="Esu-ut-yEW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="FavButtonImage" destination="CwL-me-rgb" id="Dfn-82-Gto"/>
+                        <outlet property="FullnameLabel" destination="bvF-Kn-7xE" id="D6J-EC-atm"/>
+                        <outlet property="ShortnameLabel" destination="8bK-Qs-0Ym" id="vfN-hG-VwL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STn-kC-EPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3703" y="1367"/>
+            <point key="canvasLocation" x="3701.5999999999999" y="1366.8665667166417"/>
         </scene>
         <!--List-->
         <scene sceneID="8g7-ku-SId">
@@ -626,6 +684,7 @@
     </scenes>
     <resources>
         <image name="Create Account" width="327" height="48"/>
+        <image name="Heart" width="17" height="16"/>
         <image name="Login" width="327" height="48"/>
         <image name="No" width="16" height="16"/>
     </resources>
