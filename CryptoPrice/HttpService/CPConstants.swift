@@ -10,6 +10,7 @@ import Foundation
 
 class CPConstants {
     static let BASE_URL = "https://bx.in.th/api/"
+    static let RESENT_URL = "https://bx.in.th/api/trade/?pairing="
     static let CryptoFullName = ["BTC":"Bitcoin", "BCH":"BitcoinCash", "DAS":"Dash",
                                  "DOG":"Dogecoin", "ETH":"Ethereum", "EVX":"Everex Token",
                                  "FTC":"Feathercoin", "GNO":"Gnosis", "HYP":"HyperStake",
@@ -22,4 +23,6 @@ class CPConstants {
     static var CryptoList: [Int: NSDictionary] = [:]
     static var CryptoKey: [Int] = []
     static var Favorite: [Int] = []
+    static var TradeSet: [Int: NSDictionary] = [:]
+    static var TradeKey: [Int] = []
 }

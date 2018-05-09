@@ -28,7 +28,7 @@ class FirebaseService {
             }
 
             self.docRef = Firestore.firestore().document("users/\(user!.uid)")
-            let dataToSave: [String: Any] = ["favorite": [1], "pinPrice": ["1": 0]]
+            let dataToSave: [String: Any] = ["favorite": [1]]
             self.docRef.setData(dataToSave) { (setDataError) in
                 guard error == nil else {
                     print("Firestore setting data error: \(String(describing: setDataError?.localizedDescription))")
@@ -51,17 +51,17 @@ class FirebaseService {
     }
     
     func retrieveFavorite(){
-        let fevRef = Firestore.firestore().document("users/\(userUid)")
-        fevRef.getDocument { (document, error) in
+        let favRef = Firestore.firestore().document("users/\(userUid)")
+        favRef.getDocument { (document, error) in
             let favData = document?.data() as! NSDictionary
             let fav = favData.object(forKey: "favorite") as! Array<Int>
-            print(fav)
+            print("===\(fav)")
             CPConstants.Favorite = fav
         }
-        print(fevRef)
     }
     
     func updateFavorite() {
-        
+        let favRef = Firestore.firestore().document("users/\(userUid)")
+        favRef.setData(["favorite": CPConstants.Favorite])
     }
 }
