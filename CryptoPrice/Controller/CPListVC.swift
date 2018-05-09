@@ -56,6 +56,14 @@ class CPListVC: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ListSegue", sender: CPConstants.CryptoList[CPConstants.CryptoKey[indexPath.row]]?.object(forKey: "pairing_id"))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let instant = segue.destination as! CPDetailsVC
+        instant.CryptoKey = sender as! Int
+    }
 
     /*
     // Override to support conditional editing of the table view.
