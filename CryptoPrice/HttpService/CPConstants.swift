@@ -12,5 +12,6 @@ class CPConstants {
     static let BASE_URL = "https://bx.in.th/api/"
     
     static var CryptoList: [Int: NSDictionary] = [:]
+    static var CryptoKey: [Int] = []
     
 }
