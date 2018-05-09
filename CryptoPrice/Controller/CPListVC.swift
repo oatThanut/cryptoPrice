@@ -40,9 +40,11 @@ class CPListVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableCell
-
+        
         let crypto = CPConstants.CryptoList[CPConstants.CryptoKey[indexPath.row]]
-        cell.NameLabel?.text = crypto?.object(forKey: "secondary_currency") as? String
+        let name: String = (crypto?.object(forKey: "secondary_currency") as? String)!
+        cell.LogoImage.image = UIImage(named: "\(name)")!
+        cell.NameLabel?.text = name
         
         let change = crypto?.object(forKey: "change") as! Double
         if change >= 0 {
@@ -106,5 +108,6 @@ class ListTableCell: UITableViewCell {
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var ChangeLabel: UILabel!
     @IBOutlet weak var ChangeView: UIView!
+    @IBOutlet weak var LogoImage: UIImageView!
     
 }

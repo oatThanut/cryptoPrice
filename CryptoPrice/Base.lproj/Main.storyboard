@@ -529,6 +529,7 @@
                                 <connections>
                                     <outlet property="ChangeLabel" destination="yrn-Tr-98h" id="ZBA-cP-PvN"/>
                                     <outlet property="ChangeView" destination="ABM-Ju-WCT" id="2PJ-Bx-tj6"/>
+                                    <outlet property="LogoImage" destination="Ncl-Hu-TFe" id="py6-cg-ST1"/>
                                     <outlet property="NameLabel" destination="b9a-57-9Mn" id="0Mm-2k-kqg"/>
                                 </connections>
                             </tableViewCell>
