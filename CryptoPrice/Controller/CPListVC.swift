@@ -48,14 +48,23 @@ class CPListVC: UITableViewController {
         
         let change = crypto?.object(forKey: "change") as! Double
         if change >= 0 {
-            cell.ChangeView.backgroundColor = UIColor.green
+            cell.ChangeView.backgroundColor = UIColor(red: 117/255.0, green: 219/255.0, blue: 25/255.0, alpha: 1)
         }else{
-            cell.ChangeView.backgroundColor = UIColor.red
+            cell.ChangeView.backgroundColor = UIColor(red: 219/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1)
         }
         cell.ChangeLabel?.text = "\(change)"
+        cell.ChangeView.layer.cornerRadius = 3.0
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ListSegue", sender: CPConstants.CryptoList[CPConstants.CryptoKey[indexPath.row]]?.object(forKey: "pairing_id"))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let instant = segue.destination as! CPDetailsVC
+        instant.CryptoKey = sender as! Int
+    }
 
     /*
     // Override to support conditional editing of the table view.

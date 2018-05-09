@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12226C2420A3154D00AC7A60 /* CPDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12226C2320A3154D00AC7A60 /* CPDetailsVC.swift */; };
 		124D6051208591B1002D7608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D6050208591B1002D7608 /* AppDelegate.swift */; };
 		124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D6052208591B1002D7608 /* CPSplashScreenVC.swift */; };
 		124D6056208591B1002D7608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124D6054208591B1002D7608 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12226C2320A3154D00AC7A60 /* CPDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPDetailsVC.swift; sourceTree = "<group>"; };
 		124D604D208591B1002D7608 /* CryptoPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		124D6050208591B1002D7608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		124D6052208591B1002D7608 /* CPSplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSplashScreenVC.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				125119882095D25300282E83 /* CPTabBarVC.swift */,
 				127B9B372097647A0042E72A /* CPHomeVC.swift */,
 				127B9B392097818F0042E72A /* CPListVC.swift */,
+				12226C2320A3154D00AC7A60 /* CPDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				125119892095D25300282E83 /* CPTabBarVC.swift in Sources */,
 				12B4C028209E200800E12A27 /* AlamofireService.swift in Sources */,
 				124D6053208591B1002D7608 /* CPSplashScreenVC.swift in Sources */,
+				12226C2420A3154D00AC7A60 /* CPDetailsVC.swift in Sources */,
 				127B9B3C20978F020042E72A /* FirebaseService.swift in Sources */,
 				125119872095D20800282E83 /* CPSignUpVC.swift in Sources */,
 				124D6051208591B1002D7608 /* AppDelegate.swift in Sources */,

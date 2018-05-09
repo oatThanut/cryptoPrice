@@ -25,6 +25,7 @@ class CPSplashScreenVC: UIViewController {
         }
         
         APIClient.instance.retrieveCrypto(success: { (response) in }) {}
+        FirebaseService.instance.retrieveFavorite()
     }
 
     override func didReceiveMemoryWarning() {
