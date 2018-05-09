@@ -9,7 +9,7 @@
 import UIKit
 
 class CPListVC: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,23 +29,31 @@ class CPListVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return CPConstants.CryptoList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableCell
 
-        // Configure the cell...
-
+        let crypto = CPConstants.CryptoList[CPConstants.CryptoKey[indexPath.row]]
+        cell.NameLabel?.text = crypto?.object(forKey: "secondary_currency") as? String
+        
+        let change = crypto?.object(forKey: "change") as! Double
+        if change >= 0 {
+            cell.ChangeView.backgroundColor = UIColor.green
+        }else{
+            cell.ChangeView.backgroundColor = UIColor.red
+        }
+        cell.ChangeLabel?.text = "\(change)"
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,4 +100,11 @@ class CPListVC: UITableViewController {
     }
     */
 
+}
+
+class ListTableCell: UITableViewCell {
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var ChangeLabel: UILabel!
+    @IBOutlet weak var ChangeView: UIView!
+    
 }

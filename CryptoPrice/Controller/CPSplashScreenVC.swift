@@ -23,6 +23,8 @@ class CPSplashScreenVC: UIViewController {
             // No user is signed in.
             navigateToLogin()
         }
+        
+        APIClient.instance.retrieveCrypto(success: { (response) in }) {}
     }
 
     override func didReceiveMemoryWarning() {
