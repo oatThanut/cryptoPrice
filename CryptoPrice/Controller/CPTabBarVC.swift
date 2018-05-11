@@ -13,6 +13,8 @@ class CPTabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        UITabBar.appearance().barTintColor = UIColor(red:24/255.0,green:151/255.0,blue:254/255.0,alpha:1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,4 +33,14 @@ class CPTabBarVC: UITabBarController {
     }
     */
 
+}
+class Tabbar: UITabBarItem {
+    override func awakeFromNib() {
+        if let image = image {
+            self.image = image.withRenderingMode(.alwaysOriginal)
+        }
+        if let image = selectedImage {
+            selectedImage = image.withRenderingMode(.alwaysOriginal)
+        }
+    }
 }

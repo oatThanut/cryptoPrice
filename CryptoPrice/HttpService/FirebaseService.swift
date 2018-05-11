@@ -12,7 +12,7 @@ import FirebaseAuth
 class FirebaseService {
     static let instance = FirebaseService()
     var docRef: DocumentReference!
-    let userUid = Auth.auth().currentUser!.uid
+    let userUid = Auth.auth().currentUser?.uid
     
     func registerUser(withName name:String, Email email:String, andPassword password:String, userCreationComplete: @escaping (_ status:Bool, _ error:Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -28,7 +28,7 @@ class FirebaseService {
             }
 
             self.docRef = Firestore.firestore().document("users/\(user!.uid)")
-            let dataToSave: [String: Any] = ["favorite": [1]]
+            let dataToSave: [String: Any] = ["favorite": [1], "Keeper": ["1": 0.0] ]
             self.docRef.setData(dataToSave) { (setDataError) in
                 guard error == nil else {
                     print("Firestore setting data error: \(String(describing: setDataError?.localizedDescription))")
@@ -44,6 +44,9 @@ class FirebaseService {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             guard user != nil else {
                 loginComplete(false, error)
+                if self.userUid != Auth.auth().currentUser!.uid {
+                    CPConstants.Favorite.removeAll()
+                }
                 return
             }
             loginComplete(true, nil)
@@ -51,17 +54,20 @@ class FirebaseService {
     }
     
     func retrieveFavorite(){
-        let favRef = Firestore.firestore().document("users/\(userUid)")
+        let favRef = Firestore.firestore().document("users/\(Auth.auth().currentUser!.uid)")
         favRef.getDocument { (document, error) in
-            let favData = document?.data() as! NSDictionary
+            let favData = document?.data()! as! NSDictionary
             let fav = favData.object(forKey: "favorite") as! Array<Int>
-            print("===\(fav)")
+            let kee = favData.object(forKey: "Keeper") as! [String : Double]
+//            print("===\(fav)===\(kee)")
             CPConstants.Favorite = fav
+            CPConstants.LogKeeper = kee
+//            print(fav)
         }
     }
     
     func updateFavorite() {
-        let favRef = Firestore.firestore().document("users/\(userUid)")
-        favRef.setData(["favorite": CPConstants.Favorite])
+        let favRef = Firestore.firestore().document("users/\(Auth.auth().currentUser!.uid)")
+        favRef.setData(["favorite": CPConstants.Favorite, "Keeper": CPConstants.LogKeeper])
     }
 }

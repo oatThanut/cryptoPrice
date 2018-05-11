@@ -18,6 +18,7 @@ class CPSignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

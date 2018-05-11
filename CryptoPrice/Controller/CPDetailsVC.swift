@@ -83,10 +83,10 @@ class CPDetailsVC: UIViewController ,UITableViewDelegate, UITableViewDataSource 
     
     @IBAction func RefreshBtn(_ sender: Any) {
         checkTrade()
+        APIClient.instance.retrieveCrypto(success: { (response) in }) {}
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.tableView.reloadData()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +97,7 @@ class CPDetailsVC: UIViewController ,UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "TradeCell", for: indexPath) as! TradeCell
         let trade = CPConstants.TradeSet[CPConstants.TradeKey[indexPath.row]] as! NSDictionary
         
-        cell.TimeLabel.text = trade.object(forKey: "seconds") as? String
+        cell.TimeLabel.text = trade.object(forKey: "trade_id") as? String
         
         let rate = (trade.object(forKey: "rate") as! NSString).doubleValue
         if rate > 20.0 {

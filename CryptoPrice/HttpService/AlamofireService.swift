@@ -13,23 +13,33 @@ class APIClient {
     static let instance = APIClient()
     
     func retrieveCrypto(success: @escaping (NSDictionary) -> (), error: @escaping() -> ()) {
-        Alamofire.request("\(CPConstants.BASE_URL)").responseJSON { response in
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = . reloadIgnoringLocalAndRemoteCacheData
+        
+        var req = URLRequest(url: URL(string: "\(CPConstants.BASE_URL)")!)
+        req.httpMethod = "GET"
+        req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        
+        Alamofire.request(req).validate().responseJSON { response in
             if response.result.isSuccess {
                 let dict = response.result.value as! NSDictionary
-                
+                CPConstants.CryptoList.removeAll()
+                CPConstants.CryptoKey.removeAll()
                 for index in dict {
                     let key:Int = (index.key as AnyObject).intValue
                     CPConstants.CryptoKey.append(key)
                     CPConstants.CryptoList[key] = (dict.object(forKey: key.description) as! NSDictionary)
                 }
                 CPConstants.CryptoKey.sort()
-                print(CPConstants.CryptoList[1])
+//                print(CPConstants.CryptoList[1])
                 success(response.result.value as! NSDictionary)
             } else {
                 
             }
         }
     }
+    
+    
     
     func retrieveResentTrade(Coin: String,success: @escaping () -> (), error: @escaping() -> ()) {
         Alamofire.request("\(CPConstants.RESENT_URL)\(Coin)").responseJSON { response in

@@ -11,16 +11,12 @@ import FirebaseAuth
 
 class CPHomeVC: UITableViewController {
     
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.tableView.rowHeight = 100.0
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        FirebaseService.instance.retrieveFavorite()
+        scheduledTimerWithTimeInterval()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.tableView.reloadData()
         }
@@ -28,6 +24,16 @@ class CPHomeVC: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    
+    func scheduledTimerWithTimeInterval() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounting() {
+        print("=============Updated")
+        APIClient.instance.retrieveCrypto(success: { (response) in}, error: {})
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -43,10 +49,24 @@ class CPHomeVC: UITableViewController {
     }
     
     @IBAction func LogoutBtn(_ sender: Any) {
+        CPConstants.LogKeeper.removeAll()
+        DataKeeeper()
+        FirebaseService.instance.updateFavorite()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
         try! Auth.auth().signOut()
+        }
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyBoard.instantiateViewController(withIdentifier: "Login") as! CPLoginVC
         self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    func DataKeeeper() {
+        for index in CPConstants.Favorite {
+            CPConstants.LogKeeper["\(index)"] = CPConstants.CryptoList[index]?.object(forKey: "last_price") as! Double
+            
+            print(CPConstants.LogKeeper)
+        }
+        
     }
 
     let a = ["asd", "awer", "etre"]
@@ -86,6 +106,15 @@ class CPHomeVC: UITableViewController {
         cell.bg.layer.shadowOpacity = 0.8
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "HomeSegue", sender: CPConstants.CryptoList[CPConstants.Favorite[indexPath.row]]?.object(forKey: "pairing_id"))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let instant = segue.destination as! CPDetailsVC
+        instant.CryptoKey = sender as! Int
     }
     
 
