@@ -70,10 +70,8 @@ class CPDetailsVC: UIViewController ,UITableViewDelegate, UITableViewDataSource 
     
     @IBAction func FavBtn(_ sender: Any) {
         if isFav {
-            //unFev
             CPConstants.Favorite = CPConstants.Favorite.filter { $0 != CryptoKey }
         } else {
-            //Fev
             CPConstants.Favorite.append(CryptoKey)
             CPConstants.Favorite.sort()
         }

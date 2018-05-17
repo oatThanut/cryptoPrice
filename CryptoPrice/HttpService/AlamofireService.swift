@@ -31,7 +31,6 @@ class APIClient {
                     CPConstants.CryptoList[key] = (dict.object(forKey: key.description) as! NSDictionary)
                 }
                 CPConstants.CryptoKey.sort()
-//                print(CPConstants.CryptoList[1])
                 success(response.result.value as! NSDictionary)
             } else {
                 
@@ -60,9 +59,7 @@ class APIClient {
                     CPConstants.TradeKey.append(key)
                     CPConstants.TradeKey.sort(by: >)
                     CPConstants.TradeSet[Int((order.object(forKey: "trade_id") as! NSString).intValue)] = order
-                    
                 }
-//                print(CPConstants.TradeSet)
             }
         }
     }

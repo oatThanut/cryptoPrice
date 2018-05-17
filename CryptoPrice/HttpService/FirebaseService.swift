@@ -56,13 +56,11 @@ class FirebaseService {
     func retrieveFavorite(){
         let favRef = Firestore.firestore().document("users/\(Auth.auth().currentUser!.uid)")
         favRef.getDocument { (document, error) in
-            let favData = document?.data()! as! NSDictionary
+            let favData = document?.data() as! NSDictionary
             let fav = favData.object(forKey: "favorite") as! Array<Int>
             let kee = favData.object(forKey: "Keeper") as! [String : Double]
-//            print("===\(fav)===\(kee)")
             CPConstants.Favorite = fav
             CPConstants.LogKeeper = kee
-//            print(fav)
         }
     }
     

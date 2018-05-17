@@ -25,6 +25,5 @@ class CPConstants {
     static var Favorite: [Int] = []
     static var TradeSet: [Int: NSDictionary] = [:]
     static var TradeKey: [Int] = []
-    
     static var LogKeeper: [String:Double] = [:]
 }
