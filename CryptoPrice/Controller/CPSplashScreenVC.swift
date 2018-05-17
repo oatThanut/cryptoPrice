@@ -17,19 +17,12 @@ class CPSplashScreenVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         APIClient.instance.retrieveCrypto(success: { (response) in}, error: {})
         if Auth.auth().currentUser != nil {
-            // User is signed in.
             FirebaseService.instance.retrieveFavorite()
             self.navigateToHome()
         } else {
-            // No user is signed in.
             self.navigateToLogin()
         }
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func navigateToLogin() {

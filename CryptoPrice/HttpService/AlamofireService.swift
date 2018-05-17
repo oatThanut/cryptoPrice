@@ -42,7 +42,11 @@ class APIClient {
     
     
     func retrieveResentTrade(Coin: String,success: @escaping () -> (), error: @escaping() -> ()) {
-        Alamofire.request("\(CPConstants.RESENT_URL)\(Coin)").responseJSON { response in
+        var req = URLRequest(url: URL(string: "\(CPConstants.RESENT_URL)\(Coin)")!)
+        req.httpMethod = "GET"
+        req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        
+        Alamofire.request(req).validate().responseJSON { response in
             if response.result.isSuccess {
                 let dict = response.result.value as! NSDictionary
                 let trade = dict.object(forKey: "trades") as! NSArray
@@ -54,7 +58,7 @@ class APIClient {
                     
                     let key:Int = Int((order.object(forKey: "trade_id") as! NSString).intValue)
                     CPConstants.TradeKey.append(key)
-                    CPConstants.TradeKey.sort(by: <)
+                    CPConstants.TradeKey.sort(by: >)
                     CPConstants.TradeSet[Int((order.object(forKey: "trade_id") as! NSString).intValue)] = order
                     
                 }

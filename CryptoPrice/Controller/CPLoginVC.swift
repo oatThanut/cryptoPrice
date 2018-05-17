@@ -44,11 +44,16 @@ class CPLoginVC: UIViewController {
                             let change = pass - (crypto.object(forKey: "last_price") as! Double )
                             print("+++___+++\(change)")
                             if change != 0 {
-                                messageAlert += "\(name)'s value change for \(change)\n"
+                                if change > 20.0 {
+                                    messageAlert += "\(name)'s value change for \(change)\n"
+                                } else {
+                                    messageAlert += NSString(format: "%@'s value change for %9f\n", name, change) as String
+                                }
+                                
                             }
                         }
                         if messageAlert != "" {
-                            let alertController = UIAlertController(title: "Something was change!!", message: messageAlert, preferredStyle: .alert)
+                            let alertController = UIAlertController(title: "Since your last login", message: messageAlert, preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             alertController.addAction(defaultAction)
                             self.present(alertController, animated: true, completion: nil)
